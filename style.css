@@ -307,8 +307,8 @@ dd{
 }
 
 .project-icon{
-    width: 28px;
-    height: 28px;
+    width: 14px;
+    height: 14px;
     border-radius: 8px;
     object-fit: cover;
     border: 1px solid var(--border);
