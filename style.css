@@ -317,7 +317,7 @@ dd{
 }
 
 /* Optional: slightly smaller on very small screens */
-@media (max-width: 24px){
+@media (max-width: 420px){
     .project-icon{
         width: 24px;
         height: 24px;
