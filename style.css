@@ -307,8 +307,8 @@ dd{
 }
 
 .project-icon{
-    width: 28px;
-    height: 28px;
+    width: 56px;
+    height: 56px;
     border-radius: 8px;
     object-fit: cover;
     border: 1px solid var(--border);
@@ -319,8 +319,8 @@ dd{
 /* Optional: slightly smaller on very small screens */
 @media (max-width: 420px){
     .project-icon{
-        width: 24px;
-        height: 24px;
+        width: 48px;
+        height: 48px;
         border-radius: 7px;
     }
 }
