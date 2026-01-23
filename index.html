@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Your Name — Resume</title>
+    <meta name="description" content="Resume website for Your Name." />
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<header class="container">
+    <h1>Your Name</h1>
+    <p class="muted">Role / Specialty · City, ST</p>
+    <p>
+        <a href="mailto:you@email.com">you@email.com</a> ·
+        <a href="https://www.linkedin.com/in/yourhandle">LinkedIn</a> ·
+        <a href="https://github.com/yourhandle">GitHub</a> ·
+        <a href="./resume.pdf">Resume (PDF)</a>
+    </p>
+</header>
+
+<main class="container">
+    <section>
+        <h2>Summary</h2>
+        <p>2–4 lines about what you do, strengths, and what roles you want.</p>
+    </section>
+
+    <section>
+        <h2>Experience</h2>
+
+        <article>
+            <h3>Job Title — Company</h3>
+            <p class="muted">Month YYYY – Month YYYY · Location</p>
+            <ul>
+                <li>Impact bullet with metrics if possible (e.g., “Reduced build time 30%”).</li>
+                <li>What you built, tools used, and outcome.</li>
+                <li>One more strong accomplishment.</li>
+            </ul>
+        </article>
+
+        <article>
+            <h3>Job Title — Company</h3>
+            <p class="muted">Month YYYY – Month YYYY · Location</p>
+            <ul>
+                <li>Accomplishment</li>
+                <li>Accomplishment</li>
+            </ul>
+        </article>
+    </section>
+
+    <section>
+        <h2>Projects</h2>
+        <article>
+            <h3>Project Name</h3>
+            <p class="muted">
+                <a href="https://github.com/yourhandle/project">Code</a> ·
+                <a href="https://project-demo.com">Live demo</a>
+            </p>
+            <ul>
+                <li>What it does + why it matters.</li>
+                <li>Tech used + what you contributed.</li>
+            </ul>
+        </article>
+    </section>
+
+    <section>
+        <h2>Skills</h2>
+        <p><strong>Languages:</strong> …</p>
+        <p><strong>Frameworks:</strong> …</p>
+        <p><strong>Tools:</strong> …</p>
+    </section>
+
+    <section>
+        <h2>Education</h2>
+        <p><strong>School Name</strong> — Degree, Year</p>
+    </section>
+</main>
+
+<footer class="container muted">
+    <p>© <span id="y"></span> Your Name</p>
+</footer>
+
+<script>document.getElementById("y").textContent = new Date().getFullYear();</script>
+</body>
+</html>
