@@ -299,7 +299,31 @@ dd{
     gap: 8px;
     flex-wrap: wrap;
 }
+.card-title-row{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    min-width: 0; /* prevents overflow */
+}
 
+.project-icon{
+    width: 28px;
+    height: 28px;
+    border-radius: 8px;
+    object-fit: cover;
+    border: 1px solid var(--border);
+    background: rgba(255,255,255,.06);
+    flex: 0 0 auto;
+}
+
+/* Optional: slightly smaller on very small screens */
+@media (max-width: 420px){
+    .project-icon{
+        width: 24px;
+        height: 24px;
+        border-radius: 7px;
+    }
+}
 .quick-links{
     display:grid;
     grid-template-columns: repeat(3, 1fr);
