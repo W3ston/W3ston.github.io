@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Your Name — Education</title>
+    <meta name="description" content="Education — Your Name" />
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+    <div class="container header-inner">
+        <div class="brand">
+            <a class="brand-link" href="index.html" aria-label="Home">
+                <span class="brand-mark" aria-hidden="true">YN</span>
+                <span class="brand-text">
+            <span class="brand-name">Your Name</span>
+            <span class="brand-tag">Role / Specialty</span>
+          </span>
+            </a>
+        </div>
+
+        <nav class="nav" aria-label="Primary">
+            <a class="nav-link" href="index.html">About</a>
+            <a class="nav-link" href="projects.html">Projects</a>
+            <a class="nav-link" href="work.html">Work</a>
+            <a class="nav-link active" href="education.html">Education</a>
+            <a class="nav-link" href="hobbies.html">Hobbies</a>
+            <a class="nav-link" href="extra.html">Extra</a>
+        </nav>
+    </div>
+</header>
+
+<main id="main" class="container">
+    <section class="page-head">
+        <h1>Education</h1>
+        <p class="muted">Degrees, coursework, certifications.</p>
+    </section>
+
+    <section class="stack">
+        <article class="card">
+            <h2 class="card-title">School Name</h2>
+            <p class="muted">Degree · Graduation Year · City, State</p>
+            <ul class="bullets">
+                <li>Relevant coursework: …</li>
+                <li>Honors/awards: …</li>
+                <li>Clubs/activities: …</li>
+            </ul>
+        </article>
+
+        <article class="card">
+            <h2 class="card-title">Certification / Course</h2>
+            <p class="muted">Issuer · Year</p>
+            <p>Short note about what you learned or built.</p>
+        </article>
+    </section>
+</main>
+
+<footer class="site-footer">
+    <div class="container footer-inner">
+        <p class="muted">© <span id="year"></span> Your Name</p>
+        <p class="muted"><a href="index.html">Home</a></p>
+    </div>
+</footer>
+
+<script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+</body>
+</html>

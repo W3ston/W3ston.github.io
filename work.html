@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Your Name — Work</title>
+    <meta name="description" content="Work experience — Your Name" />
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+    <div class="container header-inner">
+        <div class="brand">
+            <a class="brand-link" href="index.html" aria-label="Home">
+                <span class="brand-mark" aria-hidden="true">YN</span>
+                <span class="brand-text">
+            <span class="brand-name">Your Name</span>
+            <span class="brand-tag">Role / Specialty</span>
+          </span>
+            </a>
+        </div>
+
+        <nav class="nav" aria-label="Primary">
+            <a class="nav-link" href="index.html">About</a>
+            <a class="nav-link" href="projects.html">Projects</a>
+            <a class="nav-link active" href="work.html">Work</a>
+            <a class="nav-link" href="education.html">Education</a>
+            <a class="nav-link" href="hobbies.html">Hobbies</a>
+            <a class="nav-link" href="extra.html">Extra</a>
+        </nav>
+    </div>
+</header>
+
+<main id="main" class="container">
+    <section class="page-head">
+        <h1>Work</h1>
+        <p class="muted">Experience highlights and measurable outcomes.</p>
+    </section>
+
+    <section class="stack">
+        <article class="card">
+            <h2 class="card-title">Job Title — Company</h2>
+            <p class="muted">Month YYYY – Month YYYY · Location</p>
+            <ul class="bullets">
+                <li>Achievement with metric if possible</li>
+                <li>Ownership + scope</li>
+                <li>Tools/tech and results</li>
+            </ul>
+        </article>
+
+        <article class="card">
+            <h2 class="card-title">Job Title — Company</h2>
+            <p class="muted">Month YYYY – Month YYYY · Location</p>
+            <ul class="bullets">
+                <li>Achievement</li>
+                <li>Achievement</li>
+            </ul>
+        </article>
+    </section>
+</main>
+
+<footer class="site-footer">
+    <div class="container footer-inner">
+        <p class="muted">© <span id="year"></span> Your Name</p>
+        <p class="muted"><a href="index.html">Home</a></p>
+    </div>
+</footer>
+
+<script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+</body>
+</html>

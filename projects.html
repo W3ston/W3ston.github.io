@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Your Name — Projects</title>
+    <meta name="description" content="Projects — Your Name" />
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+    <div class="container header-inner">
+        <div class="brand">
+            <a class="brand-link" href="index.html" aria-label="Home">
+                <span class="brand-mark" aria-hidden="true">YN</span>
+                <span class="brand-text">
+            <span class="brand-name">Your Name</span>
+            <span class="brand-tag">Role / Specialty</span>
+          </span>
+            </a>
+        </div>
+
+        <nav class="nav" aria-label="Primary">
+            <a class="nav-link" href="index.html">About</a>
+            <a class="nav-link active" href="projects.html">Projects</a>
+            <a class="nav-link" href="work.html">Work</a>
+            <a class="nav-link" href="education.html">Education</a>
+            <a class="nav-link" href="hobbies.html">Hobbies</a>
+            <a class="nav-link" href="extra.html">Extra</a>
+        </nav>
+    </div>
+</header>
+
+<main id="main" class="container">
+    <section class="page-head">
+        <h1>Projects</h1>
+        <p class="muted">A few projects with clear impact and links.</p>
+    </section>
+
+    <section class="stack">
+        <article class="card">
+            <div class="card-top">
+                <h2 class="card-title">Project Name</h2>
+                <div class="card-actions">
+                    <a class="btn tiny" href="#">Code</a>
+                    <a class="btn tiny secondary" href="#">Live Demo</a>
+                </div>
+            </div>
+            <p class="lead">
+                One-sentence description of what it is and why it matters.
+            </p>
+            <ul class="bullets">
+                <li>Key feature or problem solved</li>
+                <li>Tech used: X, Y, Z</li>
+                <li>Result/impact (metrics if possible)</li>
+            </ul>
+        </article>
+
+        <article class="card">
+            <div class="card-top">
+                <h2 class="card-title">Project Name</h2>
+                <div class="card-actions">
+                    <a class="btn tiny" href="#">Code</a>
+                </div>
+            </div>
+            <p class="lead">Short description.</p>
+            <ul class="bullets">
+                <li>Key point</li>
+                <li>Key point</li>
+            </ul>
+        </article>
+    </section>
+</main>
+
+<footer class="site-footer">
+    <div class="container footer-inner">
+        <p class="muted">© <span id="year"></span> Your Name</p>
+        <p class="muted"><a href="index.html">Home</a></p>
+    </div>
+</footer>
+
+<script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
