@@ -286,6 +286,45 @@ dd{
     gap: 12px;
     margin-top: 12px;
 }
+/* Projects card layout: content left, image far right */
+.project-grid{
+    display: grid;
+    grid-template-columns: 1fr 140px; /* right column width */
+    gap: 16px;
+    align-items: start; /* keeps image aligned with bullets area */
+}
+
+.project-media{
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start; /* aligns top of image with content */
+    padding-top: 44px; /* pushes image down so it lines up closer to bullets */
+}
+
+.project-image{
+    width: 120px;
+    height: 120px;
+    border-radius: 14px;
+    object-fit: cover;
+    border: 1px solid var(--border);
+    background: rgba(255,255,255,.06);
+}
+
+/* Responsive: move image under content on small screens */
+@media (max-width: 720px){
+    .project-grid{
+        grid-template-columns: 1fr;
+    }
+    .project-media{
+        padding-top: 0;
+        justify-content: flex-start;
+    }
+    .project-image{
+        width: min(320px, 100%);
+        height: auto;
+        aspect-ratio: 1 / 1;
+    }
+}
 
 .card-top{
     display:flex;
@@ -299,6 +338,7 @@ dd{
     gap: 8px;
     flex-wrap: wrap;
 }
+
 .card-title-row{
     display: flex;
     align-items: center;
