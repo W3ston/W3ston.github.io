@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Weston — Code</title>
+    <meta name="description" content="Code snippets for projects and education." />
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+    <div class="container header-inner">
+        <div class="brand">
+            <a class="brand-link" href="index.html" aria-label="Home">
+                <span class="brand-mark" aria-hidden="true">WW</span>
+                <span class="brand-text">
+          <span class="brand-name">Weston Wilner</span>
+          <span class="brand-tag">Code</span>
+        </span>
+            </a>
+        </div>
+
+        <nav class="nav" aria-label="Primary">
+            <a class="nav-link" href="index.html">About</a>
+            <a class="nav-link" href="projects.html">Projects</a>
+            <a class="nav-link" href="work.html">Work</a>
+            <a class="nav-link" href="education.html">Education</a>
+            <a class="nav-link" href="hobbies.html">Hobbies</a>
+            <a class="nav-link" href="extra.html">Extra</a>
+            <a class="nav-link active" href="code.html">Code</a>
+        </nav>
+    </div>
+</header>
+
+<main id="main" class="container">
+    <section class="page-head">
+        <h1>Code</h1>
+        <p class="muted">Snippets from projects and coursework. Replace placeholders with your real code.</p>
+    </section>
+
+    <!-- ===== Projects ===== -->
+    <section class="card" style="padding:16px 16px 14px;">
+        <h2>Projects</h2>
+
+        <article class="card" style="margin-top:12px; padding:16px 16px 14px;">
+            <h3>Classified (Flax / C#)</h3>
+            <p class="muted">Example: inventory item definition + UI tooltip hook.</p>
+            <pre class="code-block"><code>// C# (Flax) — example snippet
+public sealed class ItemDefinition
+{
+    public string Id { get; }
+    public string DisplayName { get; }
+    public string Description { get; }
+
+    public ItemDefinition(string id, string name, string desc)
+    {
+        Id = id;
+        DisplayName = name;
+        Description = desc;
+    }
+}
+
+// Example: UI bind
+tooltipLabel.Text = selectedItem.Description;
+</code></pre>
+        </article>
+
+        <article class="card" style="margin-top:12px; padding:16px 16px 14px;">
+            <h3>GenstoMs (AI tooling / automation)</h3>
+            <p class="muted">Example: simple Python batch rename + metadata output.</p>
+            <pre class="code-block"><code># Python — example snippet
+from pathlib import Path
+
+src = Path("outputs")
+for i, p in enumerate(sorted(src.glob("*.png")), start=1):
+    new_name = src / f"genstoms_{i:03d}.png"
+    p.rename(new_name)
+    print("renamed:", new_name.name)
+</code></pre>
+        </article>
+
+        <article class="card" style="margin-top:12px; padding:16px 16px 14px;">
+            <h3>CSGOTriumph (Web stack)</h3>
+            <p class="muted">Example: basic PHP endpoint pattern + SQL parameterization.</p>
+            <pre class="code-block"><code>// PHP — example snippet (PDO)
+$stmt = $pdo-&gt;prepare("SELECT balance FROM users WHERE id = :id");
+$stmt-&gt;execute(["id" =&gt; $userId]);
+$row = $stmt-&gt;fetch();
+$balance = $row ? (int)$row["balance"] : 0;
+</code></pre>
+        </article>
+
+        <article class="card" style="margin-top:12px; padding:16px 16px 14px;">
+            <h3>Youth Valley Hackathon (Java)</h3>
+            <p class="muted">Example: win-check logic (tic-tac-toe).</p>
+            <pre class="code-block"><code>// Java — example snippet
+static boolean hasWinner(char[][] b, char p) {
+    for (int i = 0; i &lt; 3; i++) {
+        if (b[i][0] == p &amp;&amp; b[i][1] == p &amp;&amp; b[i][2] == p) return true;
+        if (b[0][i] == p &amp;&amp; b[1][i] == p &amp;&amp; b[2][i] == p) return true;
+    }
+    return (b[0][0] == p &amp;&amp; b[1][1] == p &amp;&amp; b[2][2] == p)
+        || (b[0][2] == p &amp;&amp; b[1][1] == p &amp;&amp; b[2][0] == p);
+}
+</code></pre>
+        </article>
+    </section>
+
+    <!-- ===== Education ===== -->
+    <section class="card" style="padding:16px 16px 14px; margin-top:14px;">
+        <h2>Education</h2>
+
+        <article class="card" style="margin-top:12px; padding:16px 16px 14px;">
+            <h3>Digital Logic / HDL (VHDL)</h3>
+            <p class="muted">Example: clock divider skeleton.</p>
+            <pre class="code-block"><code>-- VHDL — example snippet
+process(clk, reset)
+begin
+  if reset = '1' then
+    counter &lt;= (others =&gt; '0');
+  elsif rising_edge(clk) then
+    counter &lt;= counter + 1;
+  end if;
+end process;
+
+div_clk &lt;= counter(21);
+</code></pre>
+        </article>
+
+        <article class="card" style="margin-top:12px; padding:16px 16px 14px;">
+            <h3>Data Structures / Algorithms (C)</h3>
+            <p class="muted">Example: safe bit manipulation helper.</p>
+            <pre class="code-block"><code>// C — example snippet
+static inline unsigned set_bit(unsigned x, unsigned bit) {
+    return x | (1u &lt;&lt; bit);
+}
+
+static inline unsigned clear_bit(unsigned x, unsigned bit) {
+    return x &amp; ~(1u &lt;&lt; bit);
+}
+</code></pre>
+        </article>
+
+        <article class="card" style="margin-top:12px; padding:16px 16px 14px;">
+            <h3>Programming Languages / Interpreters (Java)</h3>
+            <p class="muted">Example: visitor pattern style evaluation skeleton.</p>
+            <pre class="code-block"><code>// Java — example snippet
+Object eval(Expression expr) {
+    return expr.accept(new ExpressionVisitor&lt;Object&gt;() {
+        public Object visitNumber(NumberExpr n) { return n.value(); }
+        public Object visitBinary(BinaryExpr b) {
+            Object l = eval(b.left());
+            Object r = eval(b.right());
+            return ((double) l) + ((double) r); // placeholder
+        }
+    });
+}
+</code></pre>
+        </article>
+    </section>
+</main>
+
+<footer class="site-footer">
+    <div class="container footer-inner">
+        <p class="muted">© <span id="year"></span> Weston Wilner</p>
+        <p class="muted"><a href="index.html">Home</a></p>
+    </div>
+</footer>
+
+<script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
