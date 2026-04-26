@@ -30,6 +30,16 @@
             <a class="nav-link active" href="extra.html">Extra</a>
             <a class="nav-link" href="code.html">Code</a>
         </nav>
+        <div class="theme-toggle-wrap">
+            <span class="theme-label">Light</span>
+
+            <label class="theme-switch" aria-label="Toggle dark and light theme">
+                <input type="checkbox" id="theme-toggle">
+                <span class="theme-slider"></span>
+            </label>
+
+            <span class="theme-label">Dark</span>
+        </div>
     </div>
 </header>
 
@@ -71,7 +81,40 @@
 </footer>
 
 <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
+    const year = document.getElementById("year");
+    const themeToggle = document.getElementById("theme-toggle");
+
+    if (year) {
+        year.textContent = new Date().getFullYear();
+    }
+
+    function applyTheme(theme) {
+        if (theme === "light") {
+            document.body.classList.add("light-theme");
+            themeToggle.checked = false;
+        } else {
+            document.body.classList.remove("light-theme");
+            themeToggle.checked = true;
+        }
+
+        localStorage.setItem("theme", theme);
+    }
+
+    const savedTheme = localStorage.getItem("theme");
+
+    if (savedTheme) {
+        applyTheme(savedTheme);
+    } else {
+        applyTheme("dark");
+    }
+
+    themeToggle.addEventListener("change", function () {
+        if (themeToggle.checked) {
+            applyTheme("dark");
+        } else {
+            applyTheme("light");
+        }
+    });
 </script>
 </body>
 </html>
