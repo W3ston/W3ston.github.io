@@ -68,6 +68,7 @@ a:hover{ text-decoration: underline; }
     align-items:center;
     justify-content: space-between;
     gap: 14px;
+
 }
 
 .brand-link{
@@ -396,4 +397,98 @@ dd{
     justify-content: space-between;
     gap: 10px;
     flex-wrap: wrap;
+}
+/* Light theme variables */
+body.light-theme {
+    --bg: #f6f3ee;
+    --card: rgba(0,0,0,.045);
+    --card2: rgba(0,0,0,.06);
+    --border: rgba(0,0,0,.14);
+    --text: rgba(18,18,18,.92);
+    --muted: rgba(18,18,18,.62);
+    --link: rgba(18,18,18,.92);
+    --shadow: 0 12px 30px rgba(0,0,0,.16);
+}
+
+/* Light theme background override */
+body.light-theme {
+    background:
+            radial-gradient(900px 500px at 15% 10%, rgba(99,102,241,.14), transparent 55%),
+            radial-gradient(800px 500px at 85% 0%, rgba(16,185,129,.12), transparent 50%),
+            radial-gradient(700px 500px at 50% 100%, rgba(59,130,246,.10), transparent 55%),
+            var(--bg);
+}
+
+/* Light theme header/footer */
+body.light-theme .site-header {
+    background: rgba(255,255,255,.68);
+}
+
+body.light-theme .site-footer {
+    background: rgba(255,255,255,.55);
+}
+
+/* Theme toggle layout */
+.theme-toggle-wrap {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    white-space: nowrap;
+}
+
+.theme-label {
+    font-size: 13px;
+    color: var(--muted);
+}
+
+/* Slider switch */
+.theme-switch {
+    position: relative;
+    display: inline-block;
+    width: 54px;
+    height: 28px;
+    flex: 0 0 auto;
+}
+
+.theme-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.theme-slider {
+    position: absolute;
+    cursor: pointer;
+    inset: 0;
+    border-radius: 999px;
+    background: rgba(255,255,255,.14);
+    border: 1px solid var(--border);
+    transition: background .25s ease, border-color .25s ease;
+}
+
+.theme-slider::before {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    left: 4px;
+    top: 3px;
+    border-radius: 50%;
+    background: var(--text);
+    transition: transform .25s ease, background .25s ease;
+}
+
+.theme-switch input:checked + .theme-slider {
+    background: rgba(255,255,255,.24);
+}
+
+.theme-switch input:checked + .theme-slider::before {
+    transform: translateX(25px);
+}
+
+/* Make header cleaner on medium screens */
+@media (max-width: 860px) {
+    .theme-toggle-wrap {
+        margin-top: 4px;
+    }
 }
