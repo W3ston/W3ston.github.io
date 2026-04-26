@@ -27,6 +27,7 @@ body{
             radial-gradient(800px 500px at 85% 0%, rgba(16,185,129,.18), transparent 50%),
             radial-gradient(700px 500px at 50% 100%, rgba(59,130,246,.14), transparent 55%),
             var(--bg);
+        background-attachment: fixed;
 }
 
 a{ color: var(--link); text-decoration: none; }
