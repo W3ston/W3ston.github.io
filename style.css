@@ -1,4 +1,6 @@
-:root{
+:root {
+    color-scheme: dark;
+
     --bg: #11112E;
     --card: rgba(255,255,255,.06);
     --card2: rgba(255,255,255,.08);
@@ -7,8 +9,11 @@
     --muted: rgba(255,255,255,.68);
     --link: rgba(255,255,255,.92);
     --shadow: 0 12px 30px rgba(0,0,0,.35);
-    --radius: 18px;
-    --max: 1050px;
+
+    --header-bg: rgba(11,13,18,.55);
+    --footer-bg: rgba(11,13,18,.45);
+    --button-bg: rgba(255,255,255,.10);
+    --button-hover: rgba(255,255,255,.14);
 }
 
 *{ box-sizing:border-box; }
@@ -410,38 +415,93 @@ body.light-theme {
     --shadow: 0 12px 30px rgba(0,0,0,.16);
 }
 
-/* Light theme background override */
 body.light-theme {
-    background:
-            radial-gradient(900px 500px at 15% 10%, rgba(99,102,241,.14), transparent 55%),
-            radial-gradient(800px 500px at 85% 0%, rgba(16,185,129,.12), transparent 50%),
-            radial-gradient(700px 500px at 50% 100%, rgba(59,130,246,.10), transparent 55%),
-            var(--bg);
+    color-scheme: light;
+
+    --bg: #f6f3ee;
+    --card: rgba(255,255,255,.72);
+    --card2: rgba(255,255,255,.84);
+    --border: rgba(0,0,0,.14);
+    --text: rgba(18,18,18,.92);
+    --muted: rgba(18,18,18,.62);
+    --link: rgba(18,18,18,.92);
+    --shadow: 0 12px 30px rgba(0,0,0,.14);
+
+    --header-bg: rgba(255,255,255,.78);
+    --footer-bg: rgba(255,255,255,.62);
+    --button-bg: rgba(0,0,0,.06);
+    --button-hover: rgba(0,0,0,.10);
 }
 
-/* Light theme header/footer */
-body.light-theme .site-header {
-    background: rgba(255,255,255,.68);
+/* Make theme changes smooth */
+body,
+.site-header,
+.site-footer,
+.card,
+.nav-link,
+.btn,
+.theme-slider,
+.theme-slider::before {
+    transition:
+            background-color .25s ease,
+            color .25s ease,
+            border-color .25s ease,
+            box-shadow .25s ease;
 }
 
-body.light-theme .site-footer {
-    background: rgba(255,255,255,.55);
+/* Use theme variables instead of hard-coded colors */
+.site-header {
+    background: var(--header-bg);
 }
 
-/* Theme toggle layout */
+.site-footer {
+    background: var(--footer-bg);
+}
+
+.lead,
+.bullets li,
+dt,
+dd {
+    color: var(--text);
+}
+
+.muted,
+.brand-tag,
+.nav-link,
+.theme-label {
+    color: var(--muted);
+}
+
+.btn {
+    background: var(--button-bg);
+    color: var(--text);
+}
+
+.btn:hover {
+    background: var(--button-hover);
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: var(--text);
+}
+
+/* ---------- Theme slider ---------- */
+
 .theme-toggle-wrap {
     display: flex;
     align-items: center;
     gap: 8px;
     white-space: nowrap;
+    margin-left: auto;
 }
 
 .theme-label {
-    font-size: 13px;
-    color: var(--muted);
+    font-size: 14px;
+    font-weight: 600;
 }
 
-/* Slider switch */
+/* Slider shell */
 .theme-switch {
     position: relative;
     display: inline-block;
@@ -450,22 +510,25 @@ body.light-theme .site-footer {
     flex: 0 0 auto;
 }
 
+/* Hide real checkbox */
 .theme-switch input {
+    position: absolute;
     opacity: 0;
     width: 0;
     height: 0;
 }
 
+/* Slider track */
 .theme-slider {
     position: absolute;
     cursor: pointer;
     inset: 0;
     border-radius: 999px;
-    background: rgba(255,255,255,.14);
+    background: rgba(255,255,255,.18);
     border: 1px solid var(--border);
-    transition: background .25s ease, border-color .25s ease;
 }
 
+/* Slider knob */
 .theme-slider::before {
     content: "";
     position: absolute;
@@ -475,20 +538,30 @@ body.light-theme .site-footer {
     top: 3px;
     border-radius: 50%;
     background: var(--text);
-    transition: transform .25s ease, background .25s ease;
 }
 
+/* Checked = dark mode */
 .theme-switch input:checked + .theme-slider {
-    background: rgba(255,255,255,.24);
+    background: rgba(255,255,255,.28);
 }
 
 .theme-switch input:checked + .theme-slider::before {
     transform: translateX(25px);
 }
 
-/* Make header cleaner on medium screens */
+/* Light mode slider look */
+body.light-theme .theme-slider {
+    background: rgba(0,0,0,.12);
+}
+
+body.light-theme .theme-switch input:checked + .theme-slider {
+    background: rgba(0,0,0,.22);
+}
+
+/* Header mobile cleanup */
 @media (max-width: 860px) {
     .theme-toggle-wrap {
+        margin-left: 0;
         margin-top: 4px;
     }
 }
